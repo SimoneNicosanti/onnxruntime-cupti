@@ -12,8 +12,8 @@ FROM nvidia/cuda:${CUDA_VERSION}-cudnn-devel-ubuntu24.04 AS builder
 ARG CUDA_APT_VERSION
 ARG ORT_VERSION=1.31.0
 ARG BUILD_JOBS=4
-# Native cubins for common SM versions; PTX for forward compatibility.
-ARG CUDA_ARCHS="75-real;80-real;86-real;89-real;90-real;100-real;120-real;120-virtual"
+# Native cubins for common SM versions
+ARG CUDA_ARCHS="75-real;80-real;86-real;89-real;90-real;100-real;120-real"
 
 ENV DEBIAN_FRONTEND=noninteractive \
     CCACHE_DIR=/root/.cache/ccache \
